@@ -53,7 +53,6 @@ function cardMaker(newCardAttrs) {
 axios.get('https://lambda-times-backend.herokuapp.com/articles/')
     .then(response => {
         let cardData = Object.values(response.data.articles)
-       
         cardData.forEach(topic => {
             console.log(topic)
             topic.forEach(finalData => {
@@ -62,6 +61,5 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles/')
                 cardsEntryPoint.appendChild(newCard)
             })
         })
-
         console.log(Object.values(cardData))
     })
